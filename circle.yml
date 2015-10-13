@@ -18,8 +18,6 @@ test:
       EOL
       cat 5.6/configuration/nginx.conf
     - |
-      docker run gullitmiranda/php-fpm ls -alh /var/www/public/
-    - |
       docker run -d -p 80:80 \
         -v $(pwd)/5.6/configuration:/docker/configuration \
         -v $(pwd)/src:/docker/src \
@@ -27,6 +25,7 @@ test:
         --name php-fpm \
         gullitmiranda/php-fpm; \
       sleep 5
+    - docker run php-fpm ls -alh /var/www/public/
     - curl --retry 10 --retry-delay 5 -v http://localhost:80
     - docker logs php-fpm
 

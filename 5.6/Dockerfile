@@ -4,7 +4,16 @@ MAINTAINER Azuki <support@azukiapp.com>
 # Install apk packages and remove apk cache when finished.
 RUN  apk --update add \
         nginx \
-        php-fpm php-json php-zlib php-xml php-pdo php-phar php-openssl php-mcrypt \
+        php-fpm \
+        php-cli \
+        php-json \
+        php-zlib \
+        php-xml \
+        php-pdo \
+        php-phar \
+        php-openssl \
+        php-mcrypt \
+        php-curl \
         supervisor \
   && rm -rf /var/cache/apk/* /var/www/*
 

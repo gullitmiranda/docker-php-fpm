@@ -18,7 +18,7 @@ test:
       EOL
       cat 5.6/configuration/nginx.conf
     - |
-      docker run --rm gullitmiranda/php-fpm ls -alh /var/www/public/
+      docker run gullitmiranda/php-fpm ls -alh /var/www/public/
     - |
       docker run -d -p 80:80 \
         -v $(pwd)/5.6/configuration:/docker/configuration \

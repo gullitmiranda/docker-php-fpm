@@ -16,9 +16,9 @@ elif [ ! -z "$APP_DIR" ]; then
   fi
 fi
 
-if [ ! -z "$APP_DIR" ]; then
-  echo "linking public folder: ${APP_DIR} -> ${dir}"
+echo "linking public folder: ${APP_DIR} -> ${dir}"
 
+if [ ! -z "$APP_DIR" ]; then
   mkdir -p "$(dirname ${dir})"
   ln -s $APP_DIR $dir
 fi

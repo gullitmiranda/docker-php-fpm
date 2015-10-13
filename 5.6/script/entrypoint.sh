@@ -7,6 +7,8 @@ sed -i -e "s/worker_processes 5/worker_processes $procs/" '../configuration/supe
 
 ./run.sh
 
+cd "${OLDPWD}"
+
 if [ "$1" = 'nginx-php-fpm' ]; then
   # If we have a custom confiuration we should use it when starting nginx, otherwise use the default one. Here
   # we update the supervisord configuration with the custom parameter.

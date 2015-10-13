@@ -13,10 +13,9 @@ test:
       	<?php
 
       	phpinfo();
-
-        php?>
       EOL
       cat 5.6/configuration/nginx.conf
+      cat src/index.php
     - |
       docker run -d -p 80:80 \
         -v $(pwd)/5.6/configuration:/docker/configuration \

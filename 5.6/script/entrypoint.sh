@@ -5,6 +5,8 @@ cd $(dirname $0)
 procs=$(cat /proc/cpuinfo |grep processor | wc -l)
 sed -i -e "s/worker_processes 5/worker_processes $procs/" '../configuration/supervisord/nginx.conf'
 
+echo "RUN customize nginx root folder "
+
 ./run.sh
 
 if [ "$1" = 'nginx-php-fpm' ]; then
